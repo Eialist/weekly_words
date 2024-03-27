@@ -8,6 +8,7 @@ const port = process.env.PORT || 3000;
 const app = express();
 const uri = process.env.MONGO_URI;
 const client = new MongoClient(uri);
+const connectDB = require("./mongodb/fetchdatabase")
 
 app.use(express.json());
 
