@@ -9,7 +9,7 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "server": "nodemon server/index.js",
-    "start": "concurrently \"npm:server\" \"npm:dev\""
+    "start": "index.js"
   },
   "dependencies": {
     "@emailjs/browser": "^4.3.3",
