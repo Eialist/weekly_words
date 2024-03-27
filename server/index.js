@@ -2,7 +2,6 @@ import express from "express";
 import { MongoClient } from "mongodb";
 import { fetchCollection } from "./src/mongodb/mongodb.js";
 import dotenv from "dotenv";
-import connectDB from "mongodb"
 dotenv.config();
 
 const port = process.env.PORT || 3000;
@@ -51,23 +50,22 @@ app.post("/api/addWord/", async (req, res) => {
     res.status(200).send({ msg: 'Nytt ord tillagt' });
 })
 
-app.get("/", async (req, res) => {
-    let my_item = req.params.my_item;
+
+app.get("/items", async (req, res) => {
     let item = await client.db("weekly-words")
         .collection("year4")
-        .then(console.log("hello"));
+        .then(console.log("hello"))
 
     return res.json(item)
 })
 
-fetchCollection("year4").then(err => {
+client.connect(err => {
     if (err) { console.error(err); return false; }
     // connection to mongo is successful, listen for requests
     app.listen(port, () => {
         console.log("listening for requests");
     })
 });
-
 
 // app.listen(port, () => console.log("Server has started on port: " + port));
 
