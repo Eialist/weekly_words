@@ -1,10 +1,13 @@
 import express from "express";
+import { MongoClient } from "mongodb";
 import { fetchCollection } from "./src/mongodb/mongodb.js";
 import dotenv from "dotenv";
 dotenv.config();
 
 const port = process.env.PORT || 3000;
 const app = express();
+const uri = process.env.MONGO_URI;
+const client = new MongoClient(uri);
 
 app.use(express.json());
 
@@ -47,5 +50,16 @@ app.post("/api/addWord/", async (req, res) => {
     res.status(200).send({ msg: 'Nytt ord tillagt' });
 })
 
+app.get("/api/stuff", async (req, res) => {
+    let items = req.params.stuffis;
+    let stuff = await client.db("weekly_words")
+        .collection("ak4")
+        .then(data)
 
-app.listen(port, () => console.log("Server has started on port: " + port));
+    return res.json(data)
+})
+
+client.connect(err => {
+    if (err) { console.error(err); return false };
+    app.listen(port, () => console.log("Server has started on port: " + port));
+})
