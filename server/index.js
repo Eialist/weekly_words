@@ -67,7 +67,6 @@ client.connect(err => {
     })
 });
 
-// client.connect(err => {
-//     if (err) { console.error(err); return false };
-//     app.listen(port, () => console.log("Server has started on port: " + port));
-// })
+
+app.listen(port, () => console.log("Server has started on port: " + port));
+
