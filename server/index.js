@@ -54,7 +54,7 @@ app.get("/items/:my_item", async (req, res) => {
     let my_item = req.params.my_item;
     let item = await client.db("weekly-words")
         .collection("year4")
-        .findOne({ name: my_item })
+        .then(console.log("hello"));
 
     return res.json(item)
 })
