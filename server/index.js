@@ -60,7 +60,7 @@ app.get("/", async (req, res) => {
     return res.json(item)
 })
 
-fetchCollection(year4).then(err => {
+fetchCollection("year4").then(err => {
     if (err) { console.error(err); return false; }
     // connection to mongo is successful, listen for requests
     app.listen(port, () => {
