@@ -2,13 +2,13 @@ import express from "express";
 import { MongoClient } from "mongodb";
 import { fetchCollection } from "./src/mongodb/mongodb.js";
 import dotenv from "dotenv";
+import connectDB from ".mongodb/fetchCollection"
 dotenv.config();
 
 const port = process.env.PORT || 3000;
 const app = express();
 const uri = process.env.MONGO_URI;
 const client = new MongoClient(uri);
-const connectDB = require("./mongodb/fetchdatabase")
 
 app.use(express.json());
 
