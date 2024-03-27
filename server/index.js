@@ -50,14 +50,14 @@ app.post("/api/addWord/", async (req, res) => {
     res.status(200).send({ msg: 'Nytt ord tillagt' });
 })
 
-app.get("/", async (req, res) => {
-    let my_item = req.params.my_item;
-    let item = await client.db("weekly-words")
-        .collection("year4")
-        .then(console.log("hello"));
+// app.get("/", async (req, res) => {
+//     let my_item = req.params.my_item;
+//     let item = await client.db("weekly-words")
+//         .collection("year4")
+//         .then(console.log("hello"));
 
-    return res.json(item)
-})
+//     return res.json(item)
+// })
 
 // client.connect(err => {
 //     if (err) { console.error(err); return false; }
