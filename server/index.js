@@ -59,13 +59,13 @@ app.get("/", async (req, res) => {
     return res.json(item)
 })
 
-client.connect(err => {
-    if (err) { console.error(err); return false; }
-    // connection to mongo is successful, listen for requests
-    app.listen(port, () => {
-        console.log("listening for requests");
-    })
-});
+// client.connect(err => {
+//     if (err) { console.error(err); return false; }
+//     // connection to mongo is successful, listen for requests
+//     app.listen(port, () => {
+//         console.log("listening for requests");
+//     })
+// });
 
 
 app.listen(port, () => console.log("Server has started on port: " + port));
