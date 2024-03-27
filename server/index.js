@@ -2,7 +2,7 @@ import express from "express";
 import { MongoClient } from "mongodb";
 import { fetchCollection } from "./src/mongodb/mongodb.js";
 import dotenv from "dotenv";
-import connectDB from ".mongodb/fetchCollection"
+import connectDB from "mongodb"
 dotenv.config();
 
 const port = process.env.PORT || 3000;
