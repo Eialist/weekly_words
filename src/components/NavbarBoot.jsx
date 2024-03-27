@@ -1,6 +1,8 @@
 import logo from "../assets/weekly-words-logo.png";
+import { useNavigate } from "react-router-dom";
 
 export const NavbarBoot = () => {
+  const navigate = useNavigate();
   return (
     <>
       <div className="d-flex justify-content-center nav-container">
@@ -37,7 +39,10 @@ export const NavbarBoot = () => {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/weeklywords">
+                <a
+                  className="nav-link"
+                  href=""
+                  onClick={() => navigate("/info")}>
                   Veckans ord
                 </a>
               </li>
