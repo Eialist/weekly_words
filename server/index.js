@@ -1,7 +1,7 @@
 import express from "express";
 import { fetchCollection } from "./src/mongodb/mongodb.js";
 
-const port = 6543;
+const port = 3000;
 const app = express();
 
 app.use(express.json());
