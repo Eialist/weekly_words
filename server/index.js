@@ -51,11 +51,12 @@ app.use(express.json());
 // })
 
 
-app.get("/items", async (req, res) => {
+app.get("/", async (req, res) => {
     let item = await client.db("weekly-words")
         .collection("year4")
         .then(console.log("hello"))
 
+    console.log(item);
     return res.send(item)
 })
 
