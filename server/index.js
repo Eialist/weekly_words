@@ -1,7 +1,9 @@
 import express from "express";
 import { fetchCollection } from "./src/mongodb/mongodb.js";
+import dotenv from "dotenv";
+dotenv.config();
 
-const port = 6543;
+const port = process.env.PORT || 3000;
 const app = express();
 
 app.use(express.json());
