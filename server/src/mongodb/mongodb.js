@@ -14,7 +14,7 @@ const fetchDatabase = () => {
         return db;
     }
 
-    const url = "mongodb+srv://learnica:weeklywords900110@weekly-words.ntcwupi.mongodb.net/?retryWrites=true&w=majority&appName=weekly-words";
+    const url = process.env.MONGO_URI;
     const client = new MongoClient(url);
 
     db = client.db(appDbName);
