@@ -55,7 +55,7 @@ app.get("/api/stuff", async (req, res) => {
         .collection("ak4")
         .then(data)
 
-    return res.json(stuff)
+    return res.send(stuff)
 })
 
 client.connect(err => {
