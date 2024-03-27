@@ -17,14 +17,13 @@ const routes = [
     element: <Homepage />,
   },
   {
-    path: "/kontakt",
-    element: <Contactpage />,
-  },
-  {
     path: "/info",
     element: <Infopage />,
   },
-
+  {
+    path: "/kontakt",
+    element: <Contactpage />,
+  },
   {
     path: "/ar4",
     element: <YearFourPage />,
