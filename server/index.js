@@ -50,7 +50,7 @@ app.post("/api/addWord/", async (req, res) => {
     res.status(200).send({ msg: 'Nytt ord tillagt' });
 })
 
-app.get("/items/:my_item", async (req, res) => {
+app.get("/", async (req, res) => {
     let my_item = req.params.my_item;
     let item = await client.db("weekly-words")
         .collection("year4")
