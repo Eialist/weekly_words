@@ -51,29 +51,23 @@ app.post("/api/addWord/", async (req, res) => {
     res.status(200).send({ msg: 'Nytt ord tillagt' });
 })
 
-// app.get("/", async (req, res) => {
-//     let my_item = req.params.my_item;
-//     let item = await client.db("weekly-words")
-//         .collection("year4")
-//         .then(console.log("hello"));
+app.get("/", async (req, res) => {
+    let my_item = req.params.my_item;
+    let item = await client.db("weekly-words")
+        .collection("year4")
+        .then(console.log("hello"));
 
-//     return res.json(item)
-// })
+    return res.json(item)
+})
 
-// client.connect(err => {
-//     if (err) { console.error(err); return false; }
-//     // connection to mongo is successful, listen for requests
-//     app.listen(port, () => {
-//         console.log("listening for requests");
-//     })
-// });
+fetchCollection().then(err => {
+    if (err) { console.error(err); return false; }
+    // connection to mongo is successful, listen for requests
+    app.listen(port, () => {
+        console.log("listening for requests");
+    })
+});
 
 
 // app.listen(port, () => console.log("Server has started on port: " + port));
 
-connectDB().then(() => {
-    console.log("db connected");
-    app.listen(port, () => {
-        console.log("listening for requests");
-    })
-})
