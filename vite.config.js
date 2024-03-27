@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "http://localhost:6543",
+        target: "https://charming-yak-gaiters.cyclic.app:6543",
         changeOrigin: true,
       }
     },
