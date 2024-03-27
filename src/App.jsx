@@ -9,7 +9,7 @@ import { YearFourPage } from "./pages/YearFourPage.jsx";
 
 const routes = [
   {
-    path: "weeklywords",
+    path: "/weeklywords",
     element: <Frontpage />,
   },
   {
@@ -17,13 +17,14 @@ const routes = [
     element: <Homepage />,
   },
   {
-    path: "/info",
-    element: <Infopage />,
-  },
-  {
     path: "/kontakt",
     element: <Contactpage />,
   },
+  {
+    path: "/info",
+    element: <Infopage />,
+  },
+
   {
     path: "/ar4",
     element: <YearFourPage />,
