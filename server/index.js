@@ -68,5 +68,11 @@ app.post("/api/addWord/", async (req, res) => {
 // });
 
 
-app.listen(port, () => console.log("Server has started on port: " + port));
+// app.listen(port, () => console.log("Server has started on port: " + port));
 
+connectDB().then(() => {
+    console.log("db connected");
+    app.listen(port, () => {
+        console.log("listening for requests");
+    })
+})
