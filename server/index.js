@@ -51,12 +51,11 @@ app.post("/api/addWord/", async (req, res) => {
 })
 
 app.get("/api/stuff", async (req, res) => {
-    let items = req.params.stuffis;
     let stuff = await client.db("weekly_words")
         .collection("ak4")
         .then(data)
 
-    return res.json(data)
+    return res.json(stuff)
 })
 
 client.connect(err => {
