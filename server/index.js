@@ -50,15 +50,24 @@ app.post("/api/addWord/", async (req, res) => {
     res.status(200).send({ msg: 'Nytt ord tillagt' });
 })
 
-app.get("/api/stuff", async (req, res) => {
-    let stuff = await client.db("weekly_words")
-        .collection("ak4")
-        .then(data)
+app.get("/items/:my_item", async (req, res) => {
+    let my_item = req.params.my_item;
+    let item = await client.db("weekly-words")
+        .collection("year4")
+        .findOne({ name: my_item })
 
-    return res.send(stuff)
+    return res.json(item)
 })
 
 client.connect(err => {
-    if (err) { console.error(err); return false };
-    app.listen(port, () => console.log("Server has started on port: " + port));
-})
+    if (err) { console.error(err); return false; }
+    // connection to mongo is successful, listen for requests
+    app.listen(port, () => {
+        console.log("listening for requests");
+    })
+});
+
+// client.connect(err => {
+//     if (err) { console.error(err); return false };
+//     app.listen(port, () => console.log("Server has started on port: " + port));
+// })
