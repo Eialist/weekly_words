@@ -56,7 +56,7 @@ app.get("/items", async (req, res) => {
         .collection("year4")
         .then(console.log("hello"))
 
-    return res.json(item)
+    return res.send(item)
 })
 
 client.connect(err => {
